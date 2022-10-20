@@ -1,0 +1,22 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+bases:
+- ../../base
+namespace: metabase-ns
+generators:
+- metabase-generator.yaml
+namePrefix: metabase-
+commonLabels:
+  service_group: tools
+  service_name: metabase
+  environment: testing
+patchesStrategicMerge:
+- deployment-patch.yaml
+- ingress-patch.yaml
+configMapGenerator:
+- name: nginx-env
+  files:
+  - nginx.conf
+- name: log4j2-env
+  files:
+  - log4j2.xml

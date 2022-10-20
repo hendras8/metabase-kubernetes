@@ -1,0 +1,5 @@
+resources:
+- metabase-deployment.yaml
+- metabase-namespace.yaml
+- metabase-service.yaml
+- metabase-ingress.yaml

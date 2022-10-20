@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ing
+spec:
+  rules:
+    - host: test-metabase.blablabla.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: svc
+              servicePort: 80
+  tls:
+  - hosts:
+    - test-metabase.blablabla.com
+    secretName: test-secret
