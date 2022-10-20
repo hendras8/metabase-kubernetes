@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
       - name: dpl
-        image: dpl
+        image: ${IMAGE_FROM_BUILD_DOCKERFILE}
         resources:
           requests:
             cpu: "1"
